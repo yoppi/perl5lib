@@ -36,8 +36,8 @@ function! s:set_perl5lib()
   let l:lib_path = s:perllib_check_path(l:current_buffer_path_l, "")
   let l:current_perl5lib = $PERL5LIB
   
-  if   (len(l:lib_path) && len(l:current_perl5lib) && (l:lib_path != l:current_perl5lib))
-    || (len(l:lib_path) && !len(l:current_perl5lib))
+  if    (len(l:lib_path) && len(l:current_perl5lib) && (l:lib_path != l:current_perl5lib))
+  \  || (len(l:lib_path) && !len(l:current_perl5lib))
     $PERL5LIB = l:lib_path . ":" . l:current_perl5lib
     echomsg "Added " . l:current_perl5lib . "into PERL5LIB"
   endif
