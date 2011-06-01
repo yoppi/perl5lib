@@ -17,7 +17,7 @@ function! s:perllib_check_path(lst, lib_path)
   elseif l:dir == "t" && filereadable(l:_lib_path)
     return l:_lib_path
   else
-    return s:perllib_check_path(a:lst[1:-1], "/" . a:lib_path)
+    return s:perllib_check_path(a:lst[1:-1], a:lib_path . '/' . l:dir)
   endif
 endfunction
 
