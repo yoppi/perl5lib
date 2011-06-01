@@ -24,9 +24,9 @@ endfunction
 function! s:current_buffer_path_lst()
   let l:lst = []
   if s:is_win
-    l:lst = split(substitute(expand('%:p'), '\\', '/', 'g'), '/')
+    let l:lst = split(substitute(expand('%:p'), '\\', '/', 'g'), '/')
   else
-    l:lst = split(expand('%:p'), '/')
+    let l:lst = split(expand('%:p'), '/')
   endif
   return l:lst
 endfunction
@@ -38,7 +38,7 @@ function! s:set_perl5lib()
   
   if    (len(l:lib_path) && len(l:current_perl5lib) && (match(l:current_perl5lib, l:lib_path) < 0)
   \  || (len(l:lib_path) && !len(l:current_perl5lib))
-    $PERL5LIB = l:lib_path . ":" . l:current_perl5lib
+    let $PERL5LIB = l:lib_path . ":" . l:current_perl5lib
     echomsg "Added " . l:current_perl5lib . "into PERL5LIB"
   endif
 endfunction
