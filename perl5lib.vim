@@ -1,4 +1,4 @@
-" set-perl5lib.vim --- set path into PERL5LIB if its file path includes 'lib' directory
+" perl5lib.vim --- set path into PERL5LIB if its file path includes 'lib' directory
 
 function! perl5lib#set_perl5lib()
   call s:set_perl5lib()
